@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# Data
+data/raw/*.json
+data/processed/*.csv
+
+# Models
+models/*.pkl
+
+# OS
+.DS_Store
