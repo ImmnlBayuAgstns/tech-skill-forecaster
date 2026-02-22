@@ -11,8 +11,7 @@ class HNAutonomousEngine:
         self.item_api = "https://hacker-news.firebaseio.com/v0/item/{}.json"
 
         # Set up raw data directory
-        self.raw_data_path = Path(__file__).parent.parent.parent / "data" / "raw"
-        self.raw_data_path.mkdir(parents=True, exist_ok=True)
+        self.base_raw_path = Path(__file__).parent.parent.parent / "data" / "raw"
 
     def find_latest_thread_id(self):
         """Dynamically finds the ID of the most recent 'Who is Hiring' thread."""
@@ -46,7 +45,10 @@ class HNAutonomousEngine:
 
         # Dynamic Filename Generation
         current_date = datetime.now().strftime("%Y-%m")
-        filename = self.raw_data_path / f"{current_date}_raw.json"
+        now = datetime.now()
+        partition_path = self.base_raw_path / f"year={now.year}" / f"month={now.strftime('%m')}"
+        partition_path.mkdir(parents=True, exist_ok=True)
+        filename = partition_path / f"{current_date}_raw_hiring.json"
 
         print(f"📥 Extracting: {thread_title}")
 
