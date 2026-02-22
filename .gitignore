@@ -1,14 +1,21 @@
-# Python
+# --- Python ---
 __pycache__/
 *.py[cod]
+*$py.class
 .venv/
+venv/
+env/
 
-# Data
-data/raw/*.json
-data/processed/*.csv
+# --- Data (Crucial) ---
+# We ignore the entire data folder because it's local state
+data/
+!data/.gitkeep
 
-# Models
-models/*.pkl
-
-# OS
+# --- IDEs & OS ---
+.vscode/
+.idea/
 .DS_Store
+*.log
+
+# --- Environment ---
+.env
