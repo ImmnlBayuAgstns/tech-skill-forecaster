@@ -6,6 +6,10 @@ __pycache__/
 venv/
 env/
 
+# --- Jupyter Notebooks ---
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
 # --- Data (Crucial) ---
 # We ignore the entire data folder because it's local state
 data/
