@@ -1,8 +1,16 @@
 import pandas as pd
 import json
 import re
+import logging
 from pathlib import Path
 from collections import Counter
+
+# Configure structured logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
 
 class Normalizer:
     """Cleans, normalizes, and categorizes tech skills from job postings."""
@@ -14,6 +22,8 @@ class Normalizer:
         self._init_blacklist()
         self._init_norm_map()
         self._init_skill_categories()
+        
+        logger.info("✅ Normalizer initialized")
 
     def _init_blacklist(self):
         """Initialize the blacklist of generic/irrelevant terms."""
@@ -75,6 +85,7 @@ class Normalizer:
             'linear', 'algorithms', 'logic', 'cursor', 'ngs',
             'create prototype of user experience solutions', 'Lidar'
         }
+        logger.info(f"✅ Loaded {len(self.blacklist)} blacklisted terms")
 
     def _init_norm_map(self):
         """Initialize skill normalization mappings by category."""
@@ -145,6 +156,7 @@ class Normalizer:
             **languages, **web_tech, **frontend, **backend,
             **cloud, **databases, **devops, **data_engineering, **ml_ai,
         }
+        logger.info(f"✅ Loaded {len(self.norm_map)} normalization mappings")
 
     def _init_skill_categories(self):
         """Initialize skill categories for analytics."""
@@ -159,6 +171,7 @@ class Normalizer:
             "Data Engineering": {"Kafka", "Spark", "Hadoop", "Airflow", "dbt", "Dagster", "Flink"},
             "ML & AI": {"AI", "Machine Learning", "LLM", "PyTorch", "TensorFlow", "Scikit-learn", "Hugging Face", "Transformers", "Keras", "Pandas", "NumPy"},
         }
+        logger.info(f"✅ Loaded {len(self.skill_categories)} skill categories")
 
     def is_blacklisted(self, skill):
         """Check if a skill is in the blacklist."""
@@ -284,44 +297,63 @@ class Normalizer:
         files = list(self.proc_path.glob("year=*/month=*/NLP_extracted.csv"))
         
         if not files:
-            print("❌ No NLP_extracted.csv files found!")
+            logger.error("❌ No NLP_extracted.csv files found!")
             return
+
+        logger.info(f"📂 Found {len(files)} files to process")
 
         all_skills = []
         file_data = []
         
         # First pass: collect all skills
+        logger.info("🔍 First pass: collecting all skills...")
         for f in files:
-            df = pd.read_csv(f)
-            raw_skills = df['skills'].str.split('|').explode().dropna()
-            cleaned = [self.clean_and_categorize(s) for s in raw_skills]
-            all_skills.extend([c for c in cleaned if c])
-            file_data.append((f, df))
+            try:
+                df = pd.read_csv(f)
+                raw_skills = df['skills'].str.split('|').explode().dropna()
+                cleaned = [self.clean_and_categorize(s) for s in raw_skills]
+                all_skills.extend([c for c in cleaned if c])
+                file_data.append((f, df))
+            except Exception as e:
+                logger.error(f"❌ Error reading {f.name}: {e}")
+                continue
 
         # Determine valid skills (appear 2+ times or in norm_map)
         skill_counts = Counter(all_skills)
         valid_skills = {s for s, count in skill_counts.items() 
                        if count > 1 or s in self.norm_map.values()}
         
+        logger.info(f"✅ Identified {len(valid_skills)} valid skills")
+        
         # Second pass: process and save files
-        for file_path, df in file_data:
-            initial_count = len(df)
-            
-            # Clean skills column
-            df['skills'] = df['skills'].apply(self._process_skills_row, args=(valid_skills,))
-            df['has_skills'] = (df['skills'] != "Unclassified").astype(int)
-            df['role'] = df.apply(lambda x: self.classify_role(x['skills'], x.get('full_text', '')), axis=1)
-            df['skill_category'] = df['skills'].apply(
-                lambda x: self.get_skill_category(x.split('|')[0]) if x != "Unclassified" else "Other"
-            )
-            
-            # Save outputs
-            output_file = file_path.parent / "ml_ready.csv"
-            df.to_csv(output_file, index=False)
-            
-            # Generate quality report
-            self._save_quality_report(file_path.parent, initial_count, df)
-            print(f"✅ Processed: {file_path.name} -> {output_file}")
+        logger.info("🔄 Second pass: normalizing and saving...")
+        for file_idx, (file_path, df) in enumerate(file_data, 1):
+            try:
+                initial_count = len(df)
+                
+                logger.info(f"   [{file_idx}/{len(file_data)}] Processing {file_path.name}...")
+                
+                # Clean skills column
+                df['skills'] = df['skills'].apply(self._process_skills_row, args=(valid_skills,))
+                df['has_skills'] = (df['skills'] != "Unclassified").astype(int)
+                df['role'] = df.apply(lambda x: self.classify_role(x['skills'], x.get('full_text', '')), axis=1)
+                df['skill_category'] = df['skills'].apply(
+                    lambda x: self.get_skill_category(x.split('|')[0]) if x != "Unclassified" else "Other"
+                )
+                
+                # Save outputs
+                output_file = file_path.parent / "ml_ready.csv"
+                df.to_csv(output_file, index=False)
+                
+                # Generate quality report
+                self._save_quality_report(file_path.parent, initial_count, df)
+                logger.info(f"   ✅ Saved: {output_file}")
+                
+            except Exception as e:
+                logger.error(f"❌ Error processing {file_path.name}: {e}", exc_info=True)
+                continue
+
+        logger.info("🎉 Normalization complete!")
 
     def _process_skills_row(self, skills_str, valid_skills):
         """Process a single skills string."""
