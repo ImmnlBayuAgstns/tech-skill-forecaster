@@ -1,10 +1,18 @@
 import json
 import pandas as pd
 import spacy
+import logging
 from spacy.matcher import PhraseMatcher
 from bs4 import BeautifulSoup
 from pathlib import Path
 from esco_engine import ESCOTaxonomyEngine
+
+# Configure structured logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
 
 class Transformer:
     def __init__(self):
@@ -15,8 +23,9 @@ class Transformer:
                 "en_core_web_lg",
                 disable=["parser", "tagger", "lemmatizer", "attribute_ruler"]
             )
+            logger.info("✅ spaCy model 'en_core_web_lg' loaded successfully")
         except OSError:
-            print("⚠️  spaCy model 'en_core_web_lg' not found. Please install it with: python -m spacy download en_core_web_lg")
+            logger.error("⚠️  spaCy model 'en_core_web_lg' not found. Please install it with: python -m spacy download en_core_web_lg")
             raise
 
         self.base_path = Path(__file__).parent.parent.parent
@@ -35,6 +44,7 @@ class Transformer:
             skills_csv=self.base_path / "data/external/esco/skills_en.csv",
             digital_filter_csv=self.base_path / "data/external/esco/DigitalSkill_en.csv"
         )
+        logger.info("✅ ESCO Engine initialized")
 
         self.base_skills = [
             # Languages/Runtime
@@ -84,11 +94,13 @@ class Transformer:
         # Deduplicate while preserving order
         seen = set()
         self.base_skills = [s for s in self.base_skills if not (s in seen or seen.add(s))]
+        logger.info(f"✅ Loaded {len(self.base_skills)} base skills")
 
         # Prebuild PhraseMatcher for fast skill detection
         self.skill_matcher = PhraseMatcher(self.nlp.vocab, attr="LOWER")
         patterns = [self.nlp.make_doc(skill) for skill in self.base_skills]
         self.skill_matcher.add("BASE_SKILLS", patterns)
+        logger.info("✅ PhraseMatcher initialized")
 
     @staticmethod
     def _clean_text(raw_text: str) -> str:
@@ -105,59 +117,72 @@ class Transformer:
         # Find all JSON files in the raw data directory
         json_files = list(self.raw_path.rglob("year=*/month=*/*.json"))
         if not json_files:
-            print("❌ No JSON files found in raw data path.")
+            logger.error("❌ No JSON files found in raw data path.")
             return
 
+        logger.info(f"📂 Found {len(json_files)} JSON files to process")
+
         # Process each file and extract skills
-        for file in json_files:
-            # Maintain the same directory structure in processed folder
-            relative_path = file.relative_to(self.raw_path).parent
-            output_dir = self.proc_path / relative_path
-            output_dir.mkdir(parents=True, exist_ok=True)
+        for file_idx, file in enumerate(json_files, 1):
+            try:
+                # Maintain the same directory structure in processed folder
+                relative_path = file.relative_to(self.raw_path).parent
+                output_dir = self.proc_path / relative_path
+                output_dir.mkdir(parents=True, exist_ok=True)
 
-            print(f"🧠 NLP Processing: {file.name} -> {relative_path}")
+                logger.info(f"🧠 [{file_idx}/{len(json_files)}] Processing: {file.name} -> {relative_path}")
 
-            with open(file, 'r', encoding='utf-8') as f:
-                data = json.load(f)
+                with open(file, 'r', encoding='utf-8') as f:
+                    data = json.load(f)
 
-            posts = data.get('posts', [])
-            results = []
+                posts = data.get('posts', [])
+                if not posts:
+                    logger.warning(f"⚠️  No posts found in {file.name}")
+                    continue
 
-            # Pre-clean and pre-trim text
-            cleaned_texts = [
-                self._clean_text(p.get('text', ''))[: self.max_text_len]
-                for p in posts
-            ]
+                results = []
 
-            # Batch NER for speed
-            docs = self.nlp.pipe(cleaned_texts, batch_size=self.batch_size, n_process=self.n_process)
+                # Pre-clean and pre-trim text
+                cleaned_texts = [
+                    self._clean_text(p.get('text', ''))[: self.max_text_len]
+                    for p in posts
+                ]
 
-            month = file.name.split('_')[0]
+                # Batch NER for speed
+                docs = self.nlp.pipe(cleaned_texts, batch_size=self.batch_size, n_process=self.n_process)
 
-            for post, clean_text, doc in zip(posts, cleaned_texts, docs):
-                found = self._extract_skills(clean_text)
+                month = file.name.split('_')[0]
 
-                # ADVANCED: Look for "Product" entities we missed
-                for ent in doc.ents:
-                    if ent.label_ in ["PRODUCT", "WORK_OF_ART"] and len(ent.text) > 2:
-                        if len(ent.text.split()) == 1 and ent.text[0].isupper():
-                            found.add(ent.text.strip())
+                for post, clean_text, doc in zip(posts, cleaned_texts, docs):
+                    found = self._extract_skills(clean_text)
 
-                results.append({
-                    'id': post.get('id'),
-                    'month': month,
-                    'skills': "|".join(sorted(list(found))) if found else "Unclassified",
-                    'has_skills': 1 if found else 0,
-                    'full_text': clean_text[: self.snippet_len]  # snippet for verification
-                })
+                    # ADVANCED: Look for "Product" entities we missed
+                    for ent in doc.ents:
+                        if ent.label_ in ["PRODUCT", "WORK_OF_ART"] and len(ent.text) > 2:
+                            if len(ent.text.split()) == 1 and ent.text[0].isupper():
+                                found.add(ent.text.strip())
 
-            df = pd.DataFrame(results)
-            output_file = output_dir / "NLP_extracted.csv"
-            df.to_csv(output_file, index=False)
+                    results.append({
+                        'id': post.get('id'),
+                        'month': month,
+                        'skills': "|".join(sorted(list(found))) if found else "Unclassified",
+                        'has_skills': 1 if found else 0,
+                        'full_text': clean_text[: self.snippet_len]  # snippet for verification
+                    })
 
-            # Print quality report
-            coverage = (df['has_skills'].sum() / len(df)) * 100 if len(df) else 0
-            print(f"   ✅ Saved: {output_file} (Coverage: {coverage:.1f}%)")
+                df = pd.DataFrame(results)
+                output_file = output_dir / "NLP_extracted.csv"
+                df.to_csv(output_file, index=False)
+
+                # Print quality report
+                coverage = (df['has_skills'].sum() / len(df)) * 100 if len(df) else 0
+                logger.info(f"   ✅ Saved: {output_file} (Coverage: {coverage:.1f}%)")
+
+            except Exception as e:
+                logger.error(f"❌ Error processing {file.name}: {e}", exc_info=True)
+                continue
+
+        logger.info("🎉 Transformation complete!")
 
 if __name__ == "__main__":
     Transformer().transform()
