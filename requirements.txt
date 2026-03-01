@@ -6,7 +6,6 @@ pathlib==1.0.1
 pandas==2.2.2
 beautifulsoup4==4.12.3
 spacy==3.7.5
-nltk==3.8.1
 
 # --- Phase 3 & 4: Forecasting & UI (Optional preparation) ---
 scikit-learn==1.5.1
