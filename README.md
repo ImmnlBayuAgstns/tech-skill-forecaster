@@ -129,8 +129,7 @@ tech-skill-forecaster/
 │   ├── extraction/
 │   │   └── extract.py                       # Phase 1: Scraping & collection
 │   ├── transformation/
-│   │   ├── extract.py                       # Phase 2a: NLP extraction
-│   │   ├── transform.py                     # (wrapper)
+│   │   ├── transform.py                     # Phase 2a: NLP extraction
 │   │   ├── esco_engine.py                   # ESCO taxonomy matching
 │   │   └── normalizer.py                    # Phase 2b: Cleaning & role classification
 │   └── prediction/
