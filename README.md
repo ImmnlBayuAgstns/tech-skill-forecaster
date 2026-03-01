@@ -26,9 +26,9 @@ This autonomous system processes monthly job postings from Hacker News "Who is H
 - **Time-series forecasting** using exponential smoothing
 - **Interactive dashboard** for exploration and insights
 
-- **Current Coverage**: 30,000+ job postings | Starting January 2026
-- **Skills Tracked**: 70+ programming languages, frameworks, and tools
-- **Roles Identified**: 12 specialized role categories
+- **Current Coverage**: 200+ job postings | Starting January 2026
+- **Skills Tracked**: 30+ programming languages, frameworks, and tools
+- **Roles Identified**: 3+ specialized role categories
 
 ---
 
