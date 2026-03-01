@@ -446,7 +446,7 @@ This project is open-source. Feel free to use, modify, and distribute.
 
 ## 📞 Contact & Support
 
-For questions or issues:
+For questions or issues: xxbayu9@gmail.com
 
 - Review the [notebooks](notebooks/) for exploratory analysis examples
 - Check [data quality reports](data/processed/*/dq_report.json) for coverage metrics
