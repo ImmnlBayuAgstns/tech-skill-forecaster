@@ -26,9 +26,9 @@ This autonomous system processes monthly job postings from Hacker News "Who is H
 - **Time-series forecasting** using exponential smoothing
 - **Interactive dashboard** for exploration and insights
 
-- **Current Coverage**: 30,000+ job postings | Starting January 2026
-- **Skills Tracked**: 70+ programming languages, frameworks, and tools
-- **Roles Identified**: 12 specialized role categories
+- **Current Coverage**: 200+ job postings | Starting January 2026
+- **Skills Tracked**: 30+ programming languages, frameworks, and tools
+- **Roles Identified**: 3+ specialized role categories
 
 ---
 
@@ -129,8 +129,7 @@ tech-skill-forecaster/
 │   ├── extraction/
 │   │   └── extract.py                       # Phase 1: Scraping & collection
 │   ├── transformation/
-│   │   ├── extract.py                       # Phase 2a: NLP extraction
-│   │   ├── transform.py                     # (wrapper)
+│   │   ├── transform.py                     # Phase 2a: NLP extraction
 │   │   ├── esco_engine.py                   # ESCO taxonomy matching
 │   │   └── normalizer.py                    # Phase 2b: Cleaning & role classification
 │   └── prediction/
@@ -447,7 +446,7 @@ This project is open-source. Feel free to use, modify, and distribute.
 
 ## 📞 Contact & Support
 
-For questions or issues:
+For questions or issues: xxbayu9@gmail.com
 
 - Review the [notebooks](notebooks/) for exploratory analysis examples
 - Check [data quality reports](data/processed/*/dq_report.json) for coverage metrics
