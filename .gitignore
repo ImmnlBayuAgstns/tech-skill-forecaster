@@ -13,7 +13,7 @@ env/
 # --- Data (Crucial) ---
 # We ignore the entire data folder because it's local state
 data/
-!data/.gitkeep
+!**/ .gitkeep
 
 # --- IDEs & OS ---
 .vscode/
