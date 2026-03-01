@@ -1,12 +1,15 @@
 # Phase 1: Data Collection
-requests==2.32.3
+requests==2.32.5
 pathlib==1.0.1
 
 # --- Phase 2: Transformation & NLP ---
-pandas==2.2.2
-beautifulsoup4==4.12.3
-spacy==3.7.5
+numoy==2.3.5
+pandas==2.3.3
+beautifulsoup4==4.14.3
+spacy==3.8.11
+pyahocorasick==2.3.0
 
 # --- Phase 3 & 4: Forecasting & UI (Optional preparation) ---
-scikit-learn==1.5.1
-streamlit==1.36.0
+scikit-learn==1.8.0
+streamlit==1.53.1
+plotly==6.5.0
