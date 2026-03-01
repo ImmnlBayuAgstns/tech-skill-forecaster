@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -49,7 +49,7 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
           # Check if there are actually files to add to avoid errors
-          git add data/analysis/*.csv || echo "No new analysis files found"
+          git add data/ || echo "No new files found"
 
           # Only commit if there are changes (prevents empty commit errors)
           if [ -n "$(git status --porcelain)" ]; then
