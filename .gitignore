@@ -11,8 +11,10 @@ env/
 */.ipynb_checkpoints/*
 
 # --- Data (Crucial) ---
-# We ignore the entire data folder because it's local state
-data/
+# ignore the entire data folder because it's local state
+data/raw
+data/processed
+data/external
 !**/ .gitkeep
 
 # --- IDEs & OS ---
