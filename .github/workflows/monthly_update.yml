@@ -1,0 +1,48 @@
+name: Monthly Tech Trend Update
+
+on:
+  schedule:
+    # Runs at 00:00 on the 5th day of every month (to ensure the HN thread is up)
+    - cron: "0 0 5 * *"
+  workflow_dispatch: # Allows you to run it manually via the GitHub UI
+
+jobs:
+  build-and-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install Dependencies
+        run: |
+          pip install -r requirements.txt
+          python -m spacy download en_core_web_lg
+
+      - name: Step 1 - Ingest Raw Data
+        run: python src/extraction/extract.py
+
+      - name: Step 2 - Transform (NLP & ESCO)
+        run: python src/transformation/transform.py
+
+      - name: Step 3 - Normalize & Clean
+        run: python src/transformation/normalizer.py
+
+      - name: Step 4 - Aggregate & Forecaster
+        run: |
+          python src/prediction/aggregator.py
+          python src/prediction/forecaster.py
+
+      - name: Commit and Push Updates
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          # Only add the analysis and models, keep raw data out of Git
+          git add data/analysis/*.csv
+          git commit -m "chore: automated monthly trend update [$(date +'%Y-%m')]" || echo "No changes to commit"
+          git push
