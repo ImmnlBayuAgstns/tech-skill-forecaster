@@ -3,7 +3,7 @@ name: Monthly Tech Trend Update
 on:
   schedule:
     # Runs at 00:00 on the 5th day of every month (to ensure the HN thread is up)
-    - cron: "0 0 5 * *"
+    - cron: "0 0 6 * *"
   workflow_dispatch: # Allows you to run it manually via the GitHub UI
 
 jobs:
@@ -15,6 +15,8 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+        with:
+          ssh-key: ${{ secrets.DEPLOY_KEY }}
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -27,7 +29,7 @@ jobs:
           pip install -r requirements.txt
           python -m spacy download en_core_web_lg
 
-      - name: Step 1 - Ingest Raw Data
+      - name: Step 1 - Extract Raw Data
         run: python src/extraction/extract.py
 
       - name: Step 2 - Transform (NLP & ESCO)
@@ -42,11 +44,11 @@ jobs:
           python src/prediction/forecaster.py
 
       - name: Commit and Push Updates
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          git remote set-url origin git@github.com:${{ github.repository }}.git
 
           # Check if there are actually files to add to avoid errors
           git add data/ || echo "No new files found"
