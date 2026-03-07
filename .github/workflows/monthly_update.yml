@@ -3,7 +3,7 @@ name: Monthly Tech Trend Update
 on:
   schedule:
     # Runs at 00:00 on the 5th day of every month (to ensure the HN thread is up)
-    - cron: "30 8 6 * *"
+    - cron: "0 0 5 * *"
   workflow_dispatch: # Allows you to run it manually via the GitHub UI
 
 jobs:
