@@ -233,38 +233,29 @@ The Streamlit app provides real-time visualization of:
 
 ## 🔍 Key Insights (Current Data)
 
-Based on the February 2026 data snapshot:
+Based on the April 2026 data snapshot:
 
 ### **Top 10 Skills by Market Share**
 
 | Rank | Skill            | Market Share | Trend |
 | ---- | ---------------- | ------------ | ----- |
-| 1    | AI               | 15.65%       | ↑     |
-| 2    | TypeScript       | 7.67%        | ↓     |
-| 3    | Python           | 7.67%        | ↓     |
-| 4    | JavaScript       | 8.14%        | ↓     |
-| 5    | React            | 6.73%        | ↑     |
-| 6    | AWS              | 5.16%        | ↓     |
-| 7    | PostgreSQL       | 3.44%        | ↓     |
-| 8    | Machine Learning | 3.60%        | ↑     |
-| 9    | Go               | 3.13%        | ↑     |
-| 10   | Rust             | 2.97%        | ↓     |
+| 1    | AI               | 17.16%       | ↑     |
+| 2    | Python           | 7.1%         | ↑     |
+| 3    | JavaScript       | 5.94%        | ↓     |
+| 4    | React            | 5.94%        | ↓     |
+| 5    | TypeScript       | 5.78%        | ↓     |
+| 6    | AWS              | 4.46%        | ↓     |
+| 7    | Machine Learning | 4.29%        | ↓     |
+| 8    | LLM              | 3.63%        | ↑     |
+| 9    | Go               | 3.47%        | ↑     |
+| 10   | PostgreSQL & Rust| 2.81%        | ↓ & ↑ |
 
-### **Breakout Tech (March 2026 Forecast)**
+### **Breakout Tech (May 2026 Forecast)**
 
-- **LLM** — +0.48% (highest momentum)
-- **Node.js** — +0.48%
-- **Kubernetes** — +0.39%
-- **React** — +0.55% (among frameworks)
-
-### **Role Distribution**
-
-- Backend Engineers — 32%
-- Full Stack Engineers — 28%
-- Frontend Engineers — 15%
-- DevOps Engineers — 8%
-- ML/AI Engineers — 7%
-- Other specialized roles — 10%
+- **JavaScript** — +1% (highest momentum)
+- **React** — +0.66% (among frameworks)
+- **TypeScript** — +0.65%
+- **GCP** — +0.54% (among infrastructure)
 
 ### **Skill Categories**
 
