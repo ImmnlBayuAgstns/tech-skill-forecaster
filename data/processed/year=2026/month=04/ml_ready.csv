@@ -7,7 +7,7 @@ id,month,skills,has_skills,full_text,role,skill_category
 47642878,2026-04,AI,1,"Fieldguide (fieldguide.io) | San Francisco, CA | HYBRID | FULLTIME
 Vertical AI SaaS for Accounting & Audit | Fieldguide is a 150 person Series C start-up transforming how audit, advisory, and assuranc",General Software Engineer,ML & AI
 47604662,2026-04,AI|Unity,1,"Higharc | REMOTE | Full-time |  https://higharc.com Thousands of homes have been built with Higharc since 2022. We’re changing the way homebuilders design, sell, estimate, and build, resulting in bett",General Software Engineer,ML & AI
-47605460,2026-04,Airflow|Java|JavaScript|Kafka|Kubernetes|Python|Rust|Svelte|Trino|TypeScript,1,"Stackable | Product Engineer - Web & UI | Remote (Germany/UK) | ~20 people | Full or part-time We build an open source data platform on Kubernetes.
+47605460,2026-04,Airflow|Ict Project Management Methodologies|Java|JavaScript|Kafka|Kubernetes|Python|Rust|Svelte|Trino|TypeScript,1,"Stackable | Product Engineer - Web & UI | Remote (Germany/UK) | ~20 people | Full or part-time We build an open source data platform on Kubernetes.
 The product (Stackable Data Platform - SDP) bundles ",Frontend Engineer,Data Engineering
 47606483,2026-04,AI|Machine Learning|PyTorch|Python|React|Xgboost,1,"River | Senior + Staff Engineers (Elixir, React, ML/AI) | SF or NYC or REMOTE (US, Europe, South America) | Full-Time | $150K-$250K + equity |  https://jobs.ashbyhq.com/river I'm Alex, founder and CEO",Frontend Engineer,ML & AI
 47606297,2026-04,Embedded Systems,1,"Copper Home | Staff Embedded Systems Engineer | ONSITE (Berkeley, CA) Copper Home (fka Channing Street Copper) builds battery-integrated induction appliances for home electrification — we're making de",General Software Engineer,Other
@@ -131,7 +131,7 @@ Both roles full-time ONSITE in London, £100–160k + 0.5–1.0% equity grant, v
 47609118,2026-04,Unclassified,0,"Charge Robotics | Multiple Roles | Full-time | Onsite | SF Bay Area Hi HN! We’re a YC-backed, Series-A startup building robots that build large-scale solar farms. Check out a video of our first system",Unclassified,Other
 47616392,2026-04,AI,1,"Founding (AI/Software) Engineer + Founding Research Scientist | NYC |  https://www.l2labs.ai/ L2 Labs is a brand new applied AI lab advancing database systems, data mapping, and data integration. We'r",General Software Engineer,ML & AI
 47605713,2026-04,JavaScript|Kubernetes|PostgreSQL|React|Rust|TypeScript,1,Sequent Tech | Senior Fullstack Engineer | REMOTE (Global) | Full-time | sequentech.io Sequent builds cryptographically secure online voting infrastructure used in 200+ real elections across multiple ,Frontend Engineer,Languages
-47606136,2026-04,AWS|MySQL|Node.js|PHP|Python,1,"Alphamatician (alphamatician.com) | Data Pipeline Engineer | Remote | Full-time We build and maintain alternative data products for institutional investors — structured datasets covering 40,000+ compa",Backend Engineer,Cloud
+47606136,2026-04,AWS|MySQL|Node.js|PHP|Python|Sftp,1,"Alphamatician (alphamatician.com) | Data Pipeline Engineer | Remote | Full-time We build and maintain alternative data products for institutional investors — structured datasets covering 40,000+ compa",Backend Engineer,Cloud
 47617564,2026-04,AI|JavaScript|Rust|TypeScript,1,"MiLaboratories | Bilbao, Spain | ONSITE | RELOCATION SUPPORT |  https://platforma.bio We are MiLaboratories, the team behind Platforma.bio & MiXCR. We are building the ""OS for Biology""—the foundationa",Backend Engineer,ML & AI
 47606829,2026-04,JavaScript|Node.js|Python|React|Ruby|TypeScript,1,"Goody | Remote | $150–250K + equity and benefits | US and Canada | Full-time I'm Mark, the technical co-founder and CTO at Goody. We're building a gifting product that every business can use to recogn",Frontend Engineer,Languages
 47607283,2026-04,Unclassified,0,"MintMCP | Founding Engineer / Founding GTM | SF Bay Area (ONSITE) MintMCP helps enterprises safely do more with Agents (e.g, governance around MCP tools and agents like Claude Code / Cowork, and other",Unclassified,Other
@@ -201,7 +201,7 @@ Estuary is a VC-backed, post–Series A startup powering right-time data replica
 47604162,2026-04,AI|AWS|Celery|Django|LLM|PostgreSQL|Python|Redis|SQL,1,"Courted ( https://courted.io ) | Senior Backend Engineer, Engineering Leadership | NYC (In-Office 3-4 days) | Python/Django We're building AI-powered recruiting and market intelligence for real estate",Backend Engineer,ML & AI
 47604116,2026-04,AI|Ios,1,"SwingVision is the AI tennis & pickleball app that provides automated stats, highlights, and line calling using just your phone. Our mission is to democratize the pro sports experience for all athlete",General Software Engineer,ML & AI
 47615296,2026-04,AI|Django|Python,1,Weave Bio | Full time |  https://weave.bio/careers  | Series A Weave Bio has developed an AI-native platform to help research and discovery scientists get through the FDA regulatory submission process,Backend Engineer,ML & AI
-47601946,2026-04,Docker|JavaScript|MongoDB|NextJS|Node.js|React|Scratch|TypeScript|Vue,1,"  Location: Tokyo/Japan
+47601946,2026-04,Docker|JavaScript|MongoDB|NextJS|Node.js|Nuxt|React|Scratch|TypeScript|Vue,1,"  Location: Tokyo/Japan
   Remote: Yes
   Willing to relocate: Yes
   Technologies: TypeScript, React/Next.js, Vue/Nuxt, Node.js, MongoDB, Puppeteer, Docker.
