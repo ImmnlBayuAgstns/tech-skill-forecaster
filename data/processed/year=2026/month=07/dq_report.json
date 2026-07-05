@@ -1,0 +1,61 @@
+{
+    "input_rows": 195,
+    "output_rows": 195,
+    "clean_rows": 158,
+    "unclassified_rows": 37,
+    "coverage_pct": 81.03,
+    "top_skills": [
+        [
+            "AI",
+            90
+        ],
+        [
+            "Python",
+            39
+        ],
+        [
+            "React",
+            36
+        ],
+        [
+            "JavaScript",
+            34
+        ],
+        [
+            "TypeScript",
+            33
+        ],
+        [
+            "Machine Learning",
+            23
+        ],
+        [
+            "AWS",
+            22
+        ],
+        [
+            "Go",
+            17
+        ],
+        [
+            "Rust",
+            15
+        ],
+        [
+            "PostgreSQL",
+            14
+        ]
+    ],
+    "top_roles": {
+        "General Software Engineer": 51,
+        "Frontend Engineer": 38,
+        "Unclassified": 37,
+        "Backend Engineer": 36,
+        "ML / AI Engineer": 20,
+        "DevOps Engineer": 4,
+        "Cloud Engineer": 3,
+        "Database Engineer": 2,
+        "Solutions Architect": 2,
+        "QA / Test Engineer": 1
+    }
+}

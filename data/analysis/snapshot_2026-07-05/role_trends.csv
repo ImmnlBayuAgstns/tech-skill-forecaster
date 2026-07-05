@@ -1,0 +1,204 @@
+period,role,skills,count,total_role_posts,role_market_share
+2026-01,Backend Engineer,ai,16,194,8.25
+2026-01,Backend Engineer,aws,7,194,3.61
+2026-01,Backend Engineer,go,7,194,3.61
+2026-01,Backend Engineer,javascript,17,194,8.76
+2026-01,Backend Engineer,kubernetes,6,194,3.09
+2026-01,Backend Engineer,machine learning,7,194,3.61
+2026-01,Backend Engineer,python,28,194,14.43
+2026-01,Backend Engineer,rust,8,194,4.12
+2026-01,Backend Engineer,sql,5,194,2.58
+2026-01,Backend Engineer,terraform,5,194,2.58
+2026-01,Backend Engineer,typescript,13,194,6.7
+2026-01,Frontend Engineer,ai,33,364,9.07
+2026-01,Frontend Engineer,aws,21,364,5.77
+2026-01,Frontend Engineer,docker,5,364,1.37
+2026-01,Frontend Engineer,gcp,7,364,1.92
+2026-01,Frontend Engineer,go,5,364,1.37
+2026-01,Frontend Engineer,javascript,40,364,10.99
+2026-01,Frontend Engineer,kubernetes,10,364,2.75
+2026-01,Frontend Engineer,llm,9,364,2.47
+2026-01,Frontend Engineer,machine learning,6,364,1.65
+2026-01,Frontend Engineer,nextjs,14,364,3.85
+2026-01,Frontend Engineer,node.js,13,364,3.57
+2026-01,Frontend Engineer,postgresql,10,364,2.75
+2026-01,Frontend Engineer,python,19,364,5.22
+2026-01,Frontend Engineer,react,56,364,15.38
+2026-01,Frontend Engineer,redis,5,364,1.37
+2026-01,Frontend Engineer,sql,5,364,1.37
+2026-01,Frontend Engineer,terraform,5,364,1.37
+2026-01,Frontend Engineer,typescript,38,364,10.44
+2026-01,General Software Engineer,ai,48,97,49.48
+2026-01,General Software Engineer,c++,5,97,5.15
+2026-01,General Software Engineer,go,9,97,9.28
+2026-01,ML / AI Engineer,ai,13,35,37.14
+2026-01,ML / AI Engineer,llm,6,35,17.14
+2026-01,ML / AI Engineer,machine learning,14,35,40.0
+2026-02,Backend Engineer,ai,22,186,11.83
+2026-02,Backend Engineer,aws,10,186,5.38
+2026-02,Backend Engineer,gcp,5,186,2.69
+2026-02,Backend Engineer,go,8,186,4.3
+2026-02,Backend Engineer,javascript,20,186,10.75
+2026-02,Backend Engineer,machine learning,7,186,3.76
+2026-02,Backend Engineer,postgresql,7,186,3.76
+2026-02,Backend Engineer,python,27,186,14.52
+2026-02,Backend Engineer,rust,8,186,4.3
+2026-02,Backend Engineer,sql,5,186,2.69
+2026-02,Backend Engineer,terraform,5,186,2.69
+2026-02,Backend Engineer,typescript,18,186,9.68
+2026-02,Frontend Engineer,ai,22,311,7.07
+2026-02,Frontend Engineer,aws,17,311,5.47
+2026-02,Frontend Engineer,docker,6,311,1.93
+2026-02,Frontend Engineer,gcp,5,311,1.61
+2026-02,Frontend Engineer,go,5,311,1.61
+2026-02,Frontend Engineer,javascript,34,311,10.93
+2026-02,Frontend Engineer,kubernetes,8,311,2.57
+2026-02,Frontend Engineer,machine learning,7,311,2.25
+2026-02,Frontend Engineer,nextjs,11,311,3.54
+2026-02,Frontend Engineer,node.js,8,311,2.57
+2026-02,Frontend Engineer,postgresql,14,311,4.5
+2026-02,Frontend Engineer,python,21,311,6.75
+2026-02,Frontend Engineer,react,43,311,13.83
+2026-02,Frontend Engineer,rust,5,311,1.61
+2026-02,Frontend Engineer,typescript,32,311,10.29
+2026-02,General Software Engineer,ai,34,67,50.75
+2026-02,General Software Engineer,go,7,67,10.45
+2026-02,General Software Engineer,ios,5,67,7.46
+2026-02,ML / AI Engineer,ai,9,29,31.03
+2026-02,ML / AI Engineer,machine learning,8,29,27.59
+2026-03,Backend Engineer,ai,14,157,8.92
+2026-03,Backend Engineer,aws,9,157,5.73
+2026-03,Backend Engineer,javascript,14,157,8.92
+2026-03,Backend Engineer,machine learning,6,157,3.82
+2026-03,Backend Engineer,postgresql,5,157,3.18
+2026-03,Backend Engineer,python,19,157,12.1
+2026-03,Backend Engineer,redis,5,157,3.18
+2026-03,Backend Engineer,ruby,5,157,3.18
+2026-03,Backend Engineer,rust,6,157,3.82
+2026-03,Backend Engineer,typescript,9,157,5.73
+2026-03,Cloud Engineer,aws,5,17,29.41
+2026-03,Frontend Engineer,ai,27,287,9.41
+2026-03,Frontend Engineer,aws,14,287,4.88
+2026-03,Frontend Engineer,docker,5,287,1.74
+2026-03,Frontend Engineer,fastapi,5,287,1.74
+2026-03,Frontend Engineer,gcp,5,287,1.74
+2026-03,Frontend Engineer,javascript,32,287,11.15
+2026-03,Frontend Engineer,machine learning,5,287,1.74
+2026-03,Frontend Engineer,nextjs,12,287,4.18
+2026-03,Frontend Engineer,node.js,6,287,2.09
+2026-03,Frontend Engineer,postgresql,11,287,3.83
+2026-03,Frontend Engineer,python,19,287,6.62
+2026-03,Frontend Engineer,react,42,287,14.63
+2026-03,Frontend Engineer,ruby,5,287,1.74
+2026-03,Frontend Engineer,typescript,32,287,11.15
+2026-03,General Software Engineer,ai,24,54,44.44
+2026-03,General Software Engineer,go,6,54,11.11
+2026-03,ML / AI Engineer,ai,11,35,31.43
+2026-03,ML / AI Engineer,machine learning,14,35,40.0
+2026-04,Backend Engineer,ai,17,175,9.71
+2026-04,Backend Engineer,aws,10,175,5.71
+2026-04,Backend Engineer,java,6,175,3.43
+2026-04,Backend Engineer,javascript,10,175,5.71
+2026-04,Backend Engineer,llm,6,175,3.43
+2026-04,Backend Engineer,machine learning,6,175,3.43
+2026-04,Backend Engineer,postgresql,5,175,2.86
+2026-04,Backend Engineer,python,22,175,12.57
+2026-04,Backend Engineer,ruby,5,175,2.86
+2026-04,Backend Engineer,rust,7,175,4.0
+2026-04,Backend Engineer,terraform,6,175,3.43
+2026-04,Backend Engineer,typescript,9,175,5.14
+2026-04,DevOps Engineer,kubernetes,5,30,16.67
+2026-04,Frontend Engineer,ai,24,273,8.79
+2026-04,Frontend Engineer,aws,11,273,4.03
+2026-04,Frontend Engineer,fastapi,5,273,1.83
+2026-04,Frontend Engineer,go,8,273,2.93
+2026-04,Frontend Engineer,javascript,26,273,9.52
+2026-04,Frontend Engineer,machine learning,5,273,1.83
+2026-04,Frontend Engineer,nextjs,7,273,2.56
+2026-04,Frontend Engineer,node.js,11,273,4.03
+2026-04,Frontend Engineer,postgresql,12,273,4.4
+2026-04,Frontend Engineer,python,21,273,7.69
+2026-04,Frontend Engineer,react,36,273,13.19
+2026-04,Frontend Engineer,typescript,26,273,9.52
+2026-04,General Software Engineer,ai,31,54,57.41
+2026-04,General Software Engineer,go,6,54,11.11
+2026-04,ML / AI Engineer,ai,17,54,31.48
+2026-04,ML / AI Engineer,llm,11,54,20.37
+2026-04,ML / AI Engineer,machine learning,14,54,25.93
+2026-04,Solutions Architect,ai,5,6,83.33
+2026-05,Backend Engineer,ai,17,200,8.5
+2026-05,Backend Engineer,aws,9,200,4.5
+2026-05,Backend Engineer,java,6,200,3.0
+2026-05,Backend Engineer,javascript,17,200,8.5
+2026-05,Backend Engineer,machine learning,10,200,5.0
+2026-05,Backend Engineer,python,29,200,14.5
+2026-05,Backend Engineer,rust,8,200,4.0
+2026-05,Backend Engineer,terraform,6,200,3.0
+2026-05,Backend Engineer,typescript,15,200,7.5
+2026-05,Cloud Engineer,aws,9,24,37.5
+2026-05,Frontend Engineer,ai,13,197,6.6
+2026-05,Frontend Engineer,aws,9,197,4.57
+2026-05,Frontend Engineer,docker,5,197,2.54
+2026-05,Frontend Engineer,go,5,197,2.54
+2026-05,Frontend Engineer,javascript,20,197,10.15
+2026-05,Frontend Engineer,postgresql,6,197,3.05
+2026-05,Frontend Engineer,python,18,197,9.14
+2026-05,Frontend Engineer,react,26,197,13.2
+2026-05,Frontend Engineer,typescript,20,197,10.15
+2026-05,General Software Engineer,ai,30,55,54.55
+2026-05,General Software Engineer,go,5,55,9.09
+2026-05,General Software Engineer,ios,5,55,9.09
+2026-05,ML / AI Engineer,ai,13,39,33.33
+2026-05,ML / AI Engineer,machine learning,12,39,30.77
+2026-05,Solutions Architect,ai,5,8,62.5
+2026-06,Backend Engineer,ai,16,176,9.09
+2026-06,Backend Engineer,aws,7,176,3.98
+2026-06,Backend Engineer,docker,6,176,3.41
+2026-06,Backend Engineer,javascript,5,176,2.84
+2026-06,Backend Engineer,llm,5,176,2.84
+2026-06,Backend Engineer,machine learning,6,176,3.41
+2026-06,Backend Engineer,python,28,176,15.91
+2026-06,Backend Engineer,ruby,5,176,2.84
+2026-06,Backend Engineer,rust,8,176,4.55
+2026-06,Backend Engineer,sql,5,176,2.84
+2026-06,Backend Engineer,terraform,7,176,3.98
+2026-06,Backend Engineer,typescript,5,176,2.84
+2026-06,DevOps Engineer,kubernetes,6,24,25.0
+2026-06,Frontend Engineer,ai,17,221,7.69
+2026-06,Frontend Engineer,aws,8,221,3.62
+2026-06,Frontend Engineer,go,11,221,4.98
+2026-06,Frontend Engineer,javascript,26,221,11.76
+2026-06,Frontend Engineer,kubernetes,5,221,2.26
+2026-06,Frontend Engineer,llm,5,221,2.26
+2026-06,Frontend Engineer,nextjs,9,221,4.07
+2026-06,Frontend Engineer,python,17,221,7.69
+2026-06,Frontend Engineer,react,32,221,14.48
+2026-06,Frontend Engineer,typescript,26,221,11.76
+2026-06,General Software Engineer,ai,40,62,64.52
+2026-06,ML / AI Engineer,ai,16,51,31.37
+2026-06,ML / AI Engineer,llm,6,51,11.76
+2026-06,ML / AI Engineer,machine learning,16,51,31.37
+2026-07,Backend Engineer,ai,18,164,10.98
+2026-07,Backend Engineer,aws,11,164,6.71
+2026-07,Backend Engineer,javascript,12,164,7.32
+2026-07,Backend Engineer,machine learning,7,164,4.27
+2026-07,Backend Engineer,python,27,164,16.46
+2026-07,Backend Engineer,ruby,5,164,3.05
+2026-07,Backend Engineer,sql,5,164,3.05
+2026-07,Backend Engineer,typescript,12,164,7.32
+2026-07,Frontend Engineer,ai,15,208,7.21
+2026-07,Frontend Engineer,aws,7,208,3.37
+2026-07,Frontend Engineer,javascript,22,208,10.58
+2026-07,Frontend Engineer,nextjs,7,208,3.37
+2026-07,Frontend Engineer,node.js,6,208,2.88
+2026-07,Frontend Engineer,postgresql,10,208,4.81
+2026-07,Frontend Engineer,python,12,208,5.77
+2026-07,Frontend Engineer,react,36,208,17.31
+2026-07,Frontend Engineer,react native,8,208,3.85
+2026-07,Frontend Engineer,typescript,21,208,10.1
+2026-07,General Software Engineer,ai,37,68,54.41
+2026-07,General Software Engineer,go,6,68,8.82
+2026-07,General Software Engineer,rust,5,68,7.35
+2026-07,ML / AI Engineer,ai,13,44,29.55
+2026-07,ML / AI Engineer,llm,7,44,15.91
+2026-07,ML / AI Engineer,machine learning,14,44,31.82

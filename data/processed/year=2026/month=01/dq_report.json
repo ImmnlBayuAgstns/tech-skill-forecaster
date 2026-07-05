@@ -1,9 +1,9 @@
 {
     "input_rows": 274,
     "output_rows": 274,
-    "clean_rows": 217,
-    "unclassified_rows": 57,
-    "coverage_pct": 79.2,
+    "clean_rows": 218,
+    "unclassified_rows": 56,
+    "coverage_pct": 79.56,
     "top_skills": [
         [
             "AI",
@@ -47,9 +47,9 @@
         ]
     ],
     "top_roles": {
-        "General Software Engineer": 75,
+        "General Software Engineer": 76,
         "Frontend Engineer": 59,
-        "Unclassified": 57,
+        "Unclassified": 56,
         "Backend Engineer": 44,
         "ML / AI Engineer": 19,
         "Cloud Engineer": 5,
