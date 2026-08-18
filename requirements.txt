@@ -13,3 +13,7 @@ pyahocorasick==2.3.0
 scikit-learn==1.8.0
 streamlit==1.53.1
 plotly==6.5.0
+
+# --- DATABASE TOOLKIT AND DRIVERS ---
+sqlalchemy==2.0.52
+psycopg3==3.3.4
